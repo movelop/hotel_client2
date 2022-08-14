@@ -77,7 +77,7 @@ const BookWidget = () => {
                 <div className="date">
                     <div className="select-date">
                         <TextField
-                            value={`${format(dates[0].startDate, "MM/dd/yyyy")}`}
+                            value={`${format(searchDate[0].startDate, "MM/dd/yyyy")}`}
                             readOnly
                             className="inputBox"
                             label="Check-in"
@@ -87,7 +87,7 @@ const BookWidget = () => {
                     <Box>to</Box>
                     <div className="select-date">
                         <TextField
-                            value={`${format(dates[0].endDate, "MM/dd/yyyy")}`}
+                            value={`${format(searchDate[0].endDate, "MM/dd/yyyy")}`}
                             readOnly
                             className="inputBox"
                             label="Check-out"

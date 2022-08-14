@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import './Dining.scss';
+import './Hall.scss';
 
-const Dining = () => {
+const Hall = () => {
   return (
-    <div className="Dining">
+    <div className='Hall'>
         <header className='header-main'
             style={{
             background:
-                ' no-repeat center/cover url("/img/dining/dining_header.jpg")',
+                ' no-repeat center/cover url("/img/hall/hall_header.jpg")',
             }}
         >
             <div className="header-content">
-                <h2 className="alt-font">Restaurant & Bar</h2>
-                <p>Discover D'czars' best dining</p>
+                <h2 className="alt-font">Event Hall</h2>
+                <p>Host your functions in our lovely halls</p>
             </div>
         </header>
         <section className="desc">
@@ -26,33 +26,28 @@ const Dining = () => {
                 lime.
             </p>
         </section>
-        <section className="desc_gallery">
+        <section className="desc_photo">
             <div className="descLeft">
-                <h2 className="alt-font">Fine Dine</h2>
-                <div className="img-container">
-                    <img src="/img/dining/dining_article.jpg" alt="dining_pic" />
-                </div>
+                <div>
+                    <h1 className="alt-font">Meetings & Seminars</h1>
+                <p>
+                    The stylish heart of our resort, Vista Bar and Lounge’s eclectic
+                    drinks, live entertainment and unfettered mountain views are
+                    renowned in Cape Town. Indulge in afternoon tea, and by night, let
+                    our expert mixologists personalise your cocktail. Table Mountain
+                    forms an irresistible backdrop to your cosmopolitan evening out, as
+                    Vista Bar buzzes with a sophisticated crowd.
+                </p>
+                </div> 
             </div>
             <div className="descRight">
-                <img src="/img/dining/dining_team.jpg" alt="dining_team" />
-                <article>
-                    <h2 className="alt-font">World Class Culinary Team</h2>
-                    <p>
-                        Be captivated by the cosmopolitan buzz of Adisa, where you’ll
-                        delight in the world-famous fusion of Nigerian and Ghanaian
-                        cuisine invented by Michelin-starred master chef, Adisa
-                        Babagboyin. With stunning views of iconic Table Mountain, our Cape
-                        Town fine dining restaurant and chic bar comes alive with
-                        innovative dishes, intriguing cocktails, sparkling conversation
-                        and chilled-out tunes.
-                    </p>
-                </article>
+                <img src="/img/dining/dining_bar.jpg" alt="dining_bar" />
             </div>
         </section>
         <section className="desc_photo">
             <div className="descLeft">
                 <div>
-                    <h1 className="alt-font">D'czars Bar & Lounge</h1>
+                    <h1 className="alt-font">Ceremonies</h1>
                 <p>
                     The stylish heart of our resort, Vista Bar and Lounge’s eclectic
                     drinks, live entertainment and unfettered mountain views are
@@ -71,4 +66,4 @@ const Dining = () => {
   )
 }
 
-export default Dining
+export default Hall;

@@ -47,8 +47,8 @@ const Navbar = () => {
         <Link to="/dining">
           Restaurant & Bar <span>&#183;</span>{" "}
         </Link>
-        <Link to="/hall">
-          Hall <span>&#183;</span>{" "}
+        <Link to="/event">
+          Event <span>&#183;</span>{" "}
         </Link>
         <Link to="/about">About</Link>
       </div>

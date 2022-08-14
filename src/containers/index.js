@@ -4,6 +4,7 @@ export { default as Rooms } from './Rooms/Rooms';
 export { default as Room } from './Rooms/Room/Room';
 export { default as Dining } from './Dining/Dining';
 export { default as About } from './About/About';
+export { default as Hall } from './Hall/Hall';
 export { default as Booking } from './Booking/Booking';
 export { default as Existing } from './Booking/Existing/Existing';
 export { default as Checkout } from './Booking/Checkout/Checkout';

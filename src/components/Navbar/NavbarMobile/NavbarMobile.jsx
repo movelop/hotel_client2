@@ -63,8 +63,8 @@ const NavbarMobile = () => {
             <IoIosArrowForward className='icon' />
           </li>
           <li>
-            <Link onClick={() => setToggleMenu(false)} to="/hall">
-              Hall{" "}
+            <Link onClick={() => setToggleMenu(false)} to="/event">
+              Event{" "}
             </Link>
             <IoIosArrowForward className='icon' />
           </li>
