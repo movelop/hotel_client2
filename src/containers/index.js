@@ -1,0 +1,10 @@
+export { default as Home } from './Home/Home';
+export { default as NoPage } from './NoPage/NoPage';
+export { default as Rooms } from './Rooms/Rooms';
+export { default as Room } from './Rooms/Room/Room';
+export { default as Dining } from './Dining/Dining';
+export { default as About } from './About/About';
+export { default as Booking } from './Booking/Booking';
+export { default as Existing } from './Booking/Existing/Existing';
+export { default as Checkout } from './Booking/Checkout/Checkout';
+export { default as Confirmation } from './Booking/Confirmation/Confirmation';
