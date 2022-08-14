@@ -301,7 +301,7 @@ const Checkout = () => {
                       disabled={!isAvailable(roomNumber)}
                       control={ <Checkbox
                         value={roomNumber._id}
-                        name= {roomNumber.number.toString()}
+                        name= {roomNumber.number?.toString()}
                         onChange={handleSelect}
                       />} 
                       label={roomNumber.number}

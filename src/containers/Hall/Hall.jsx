@@ -41,7 +41,7 @@ const Hall = () => {
                 </div> 
             </div>
             <div className="descRight">
-                <img src="/img/dining/dining_bar.jpg" alt="dining_bar" />
+                <img src="/img/hall/hall_meeting.jpg" alt="hall_meeting" />
             </div>
         </section>
         <section className="desc_photo">
@@ -59,7 +59,7 @@ const Hall = () => {
                 </div> 
             </div>
             <div className="descRight">
-                <img src="/img/dining/dining_bar.jpg" alt="dining_bar" />
+                <img src="/img/hall/hall_party.jpg" alt="hall_party" />
             </div>
         </section>
     </div>
