@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="Footer">
         <div>
-            <h2 className="alt-font">Heritage Resorts</h2>
+            <h2 className="alt-font">D'czars Hotel & Suites</h2>
         </div>
         <div>
             <p>{new Date().getFullYear()} © ADE OJO. ALL RIGHTS RESERVED.</p>
