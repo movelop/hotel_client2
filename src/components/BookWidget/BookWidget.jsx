@@ -13,6 +13,7 @@ import './BookWidget.scss';
 
 const BookWidget = () => {
     const { search, dates, options } = useContext(SearchContext);
+    const [width, setWidth] = useState(window.innerWidth);
     const [showInfo, setShowInfo] = useState(false);
     const [searchDate,setSearchDate] = useState(dates)
     const [searchOptions, setSearchOptions] = useState(options);
@@ -20,6 +21,7 @@ const BookWidget = () => {
     const refOne = useRef(null)
     const navigate = useNavigate();
     const location = useLocation();
+
 
     useEffect(() => {
         // event listeners
@@ -34,6 +36,16 @@ const BookWidget = () => {
           setOpen(false)
         }
       }
+
+    useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+        // subscribe to window resize event "onComponentDidMount"
+        window.addEventListener("resize", handleResizeWindow);
+        return () => {
+        // unsubscribe "onComponentDestroy"
+        window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, [])
     
       // Hide on outside click
       const hideOnClickOutside = (e) => {
@@ -64,6 +76,14 @@ const BookWidget = () => {
         setSearchOptions({ ...searchOptions, children: searchOptions.children + val });
     };
 
+    const handleOpen = () => {
+        if(width <= 920) {
+            setShowInfo(true);
+        }
+        
+        setOpen(true);
+    }
+
     const handleSubmit = () => {
         if(location.pathname !== '/booking') {
             navigate('/booking', { state: { searchDate, searchOptions } });
@@ -81,7 +101,7 @@ const BookWidget = () => {
                             readOnly
                             className="inputBox"
                             label="Check-in"
-                            onClick={ () => setOpen(open => !open) }
+                            onClick={handleOpen}
                         />
                     </div>
                     <Box>to</Box>
@@ -91,7 +111,7 @@ const BookWidget = () => {
                             readOnly
                             className="inputBox"
                             label="Check-out"
-                            onClick={ () => setOpen(open => !open) }
+                            onClick={handleOpen}
                         />  
                     </div>
                     <div ref={refOne} className="calenderElement">
