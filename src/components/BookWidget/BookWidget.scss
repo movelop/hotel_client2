@@ -34,11 +34,11 @@
             align-items: center;
             position: relative;
 
-            .select-date {
-                display: flex;
-                flex-direction: column;
+            // .select-date {
+            //     display: flex;
+            //     flex-direction: column;
 
-            }
+            // }
 
             .calenderElement {
                 position: absolute;
@@ -137,6 +137,14 @@
                 margin: 2.5rem 0 2rem 0;
                 flex-wrap: wrap;
 
+                .adults {
+                    margin-right: 1rem;
+                }
+    
+                .rooms {
+                    margin-left: 1rem;
+                }
+
                 .guest-select {
 
                     .btn{
@@ -156,5 +164,46 @@
 
     .active {
         height: 380px !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .BookWidget {
+        form {
+            .date {
+                .calenderElement {
+                    top: -20px;
+                    left: -35%;
+                    transform: scale(0.65);
+                }
+            }
+
+            .guest {
+                .adults {
+                    margin-right: 0.5rem;
+                }
+    
+                .rooms {
+                    margin-left: 0.5rem;
+                }
+
+                label {
+                    font-size: 14px;
+                }
+
+                .guest-select {
+
+                    .btn{
+                        &-sm {
+                            padding: 3px;
+                        }
+                    }
+
+                    span{
+                        padding: 0.25em;
+                    }
+                }
+            }
+        }
     }
 }
