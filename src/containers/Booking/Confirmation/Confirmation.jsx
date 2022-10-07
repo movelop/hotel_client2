@@ -6,6 +6,7 @@ import './Confirmation.scss';
 
 const Confirmation = () => {
   const location = useLocation();
+  console.log(location.state);
   const  confirmation  = location.state?.confirmation;
   return (
     <div className='Confirm'>
