@@ -123,7 +123,7 @@ const Checkout = () => {
       const newBooking = {
           ...formData,
           roomTitle: room.title,
-          adults: options.adult,
+          adults: options.adults,
           children: options.children,
           startDate: dates[0].startDate,
           endDate: dates[0].endDate,
@@ -228,7 +228,7 @@ const Checkout = () => {
                 <div>
                     <h4>Guest(s)</h4>
                     <span>
-                        {options.adult} Adults{" "}
+                        {options.adults} Adults{" "}
                         {options.children > 0 &&
                         `${options.children} Children`}
                     </span>
