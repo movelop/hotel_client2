@@ -120,61 +120,61 @@ const Checkout = () => {
     }
 
     const handleSuccess = async(reference) => {
-        const newBooking = {
-            ...formData,
-            roomTitle: room.title,
-            adults: options.adult,
-            children: options.children,
-            startDate: dates[0].startDate,
-            endDate: dates[0].endDate,
-            numberOfRooms: options.rooms,
-            selectedRooms: selectedRooms,
-            roomNumbers: selectedRoomNumbers,
-            price: totalPrice,
-            paymentReference: reference,
-        }
-        setLoading(true);
-        try {
-            const verifyRes = await axios.get(`https://heritage-resorts.herokuapp.com/api/bookings/verify-payment/${reference}`);
+      const newBooking = {
+          ...formData,
+          roomTitle: room.title,
+          adults: options.adult,
+          children: options.children,
+          startDate: dates[0].startDate,
+          endDate: dates[0].endDate,
+          numberOfRooms: options.rooms,
+          selectedRooms: selectedRooms,
+          roomNumbers: selectedRoomNumbers,
+          price: totalPrice,
+          paymentReference: reference,
+      }
+      setLoading(true);
+      try {
+          const verifyRes = await axios.get(`https://heritage-resorts.herokuapp.com/api/bookings/verify-payment/${reference}`);
 
-            if (verifyRes.data.data.status === 'success') {
-                try {
-                    await Promise.all(
-                        selectedRooms.map((roomId) => {
-                          const res = axios.put(`https://heritage-resorts.herokuapp.com/api/rooms/availability/${roomId}`, {
-                            dates: alldates,
-                          });
-                          return res.data;
-                        })
-                    );
-                     const bookingRes = await axios.post('https://heritage-resorts.herokuapp.com/api/bookings/create', newBooking);
-                     setLoading(false);
-                     navigate('/booking/confirmation', { state: { confirmation: bookingRes.data } });
-                } catch (error) {
-                    setLoading(false)
-                    navigate('/booking/confirmation', { state: { error: error.response.data }});
-                }
-            }
-        } catch (error) {
-            setLoading(false);
-            navigate('/booking/confirmation', { state: { error: error.response.data }});
-        } 
-    }
+          if (verifyRes.data.data.status === 'success') {
+              try {
+                  await Promise.all(
+                      selectedRooms.map((roomId) => {
+                        const res = axios.put(`https://heritage-resorts.herokuapp.com/api/rooms/availability/${roomId}`, {
+                          dates: alldates,
+                        });
+                        return res.data;
+                      })
+                  );
+                   const bookingRes = await axios.post('https://heritage-resorts.herokuapp.com/api/bookings/create', newBooking);
+                   setLoading(false);
+                   navigate('/booking/confirmation', { state: { confirmation: bookingRes.data } });
+              } catch (error) {
+                  setLoading(false)
+                  navigate('/booking/confirmation', { state: { error: error.response.data }});
+              }
+          }
+      } catch (error) {
+          setLoading(false);
+          navigate('/booking/confirmation', { state: { error: error.response.data }});
+      } 
+  }
 
-    const componentProps = {
-        email: formData.email,
-        amount: totalPrice * 100,
-        metadata: {
-            name: `${formData.firstname} ${formData.lastname}`,
-            phone: formData.phone,
-        },
-        publicKey: publicKey,
-        text: "Pay Now",
-        onSuccess: (reference) =>{
-            handleSuccess(reference.reference);
-        },   
-        onClose: () => alert("Wait! Don't leave :("),
-    }
+  const componentProps = {
+      email: formData.email,
+      amount: totalPrice * 100,
+      metadata: {
+          name: `${formData.firstname} ${formData.lastname}`,
+          phone: formData.phone,
+      },
+      publicKey: publicKey,
+      text: "Pay Now",
+      onSuccess: (reference) =>{
+          handleSuccess(reference.reference);
+      },   
+      onClose: () => alert("Wait! Don't leave :("),
+  }
 
   return (
     <div className="Checkout">
