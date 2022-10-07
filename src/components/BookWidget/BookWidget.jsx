@@ -99,6 +99,7 @@ const BookWidget = () => {
                         <TextField
                             value={`${format(searchDate[0].startDate, "MM/dd/yyyy")}`}
                             readOnly
+                            disabled={true}
                             className="inputBox"
                             label="Check-in"
                             onClick={handleOpen}
@@ -109,13 +110,14 @@ const BookWidget = () => {
                         <TextField
                             value={`${format(searchDate[0].endDate, "MM/dd/yyyy")}`}
                             readOnly
+                            disabled={true}
                             className="inputBox"
                             label="Check-out"
                             onClick={handleOpen}
                         />  
                     </div>
-                    <div ref={refOne} className="calenderElement">
-                        {open && 
+                    {open && 
+                        <div ref={refOne} className="calenderElement">
                             <DateRange
                                 editableDateInputs={true}
                                 onChange={(item) => setSearchDate([item.selection])}
@@ -123,8 +125,8 @@ const BookWidget = () => {
                                 ranges={searchDate}
                                 minDate={new Date()}
                             />
-                        }
-                    </div>
+                        </div>
+                    }
                 </div>
                 <div className="guest">
                     <div className="adults">
