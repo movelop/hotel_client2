@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {Routes, Route, useLocation } from 'react-router-dom';
 import { Footer, Navbar, NavbarMobile } from './components';
 import { About, Booking, Checkout, Confirmation, Dining, Existing, Hall, Home, NoPage, Room, Rooms } from './containers';
-
 import './App.scss';
 
 const App = () => {

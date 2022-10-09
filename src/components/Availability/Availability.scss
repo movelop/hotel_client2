@@ -1,9 +1,9 @@
-.Available {
+.availability-container {
     display: flex;
     flex-direction: column;
     max-width: 1000px;
     margin: auto;
-
+    
     .room-card {
         display: flex;
         padding: 1rem;
@@ -34,6 +34,7 @@
                 div {
                     flex-basis: 50%;
                     line-height: 1.4;
+                    margin: 5px 0;
 
                     label {
                         font-weight: bold;

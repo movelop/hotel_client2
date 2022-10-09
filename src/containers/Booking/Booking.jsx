@@ -81,9 +81,11 @@ const Booking = () => {
         <BookWidget />
         {loading ? (<Loader />) : (
             <>
-              {data.length > 0 && (
-                <Availability data={data} />
-              )}
+              <div className='Available'>
+                {data.map((room) => (
+                  <Availability room = {room} key={room._id}/>
+                ))}
+              </div>
             </>
           )}
     </div>

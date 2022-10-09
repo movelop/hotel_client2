@@ -47,6 +47,13 @@
     .loader {
         margin-top: 3rem;
     }
+
+    .Available {
+        display: flex;
+        flex-direction: column;
+        max-width: 1000px;
+        margin: auto;
+    }
 }
 
 /* Tablet/Mobile */
