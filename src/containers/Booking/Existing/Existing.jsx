@@ -31,13 +31,13 @@ const Existing = () => {
             await Promise.all(
                 selectedRooms.map((roomId) => {
                 console.log(roomId);
-                const res = axios.put(`https://heritage-resorts.herokuapp.com/api/rooms/reservation/${roomId}`, {
+                const res = axios.put(`/api/rooms/reservation/${roomId}`, {
                     dates: alldates,
                 });
                 return res.data;
                 })
             );
-            await axios.delete(`https://heritage-resorts.herokuapp.com/api/bookings/${_id}`);
+            await axios.delete(`/api/bookings/${_id}`);
             navigate('/');
         } catch (error) {
             console.log(error);

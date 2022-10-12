@@ -135,19 +135,19 @@ const Checkout = () => {
       }
       setLoading(true);
       try {
-          const verifyRes = await axios.get(`https://heritage-resorts.herokuapp.com/api/bookings/verify-payment/${reference}`);
+          const verifyRes = await axios.get(`/api/bookings/verify-payment/${reference}`);
 
           if (verifyRes.data.data.status === 'success') {
               try {
                   await Promise.all(
                       selectedRooms.map((roomId) => {
-                        const res = axios.put(`https://heritage-resorts.herokuapp.com/api/rooms/availability/${roomId}`, {
+                        const res = axios.put(`/api/rooms/availability/${roomId}`, {
                           dates: alldates,
                         });
                         return res.data;
                       })
                   );
-                   const bookingRes = await axios.post('https://heritage-resorts.herokuapp.com/api/bookings/create', newBooking);
+                   const bookingRes = await axios.post('/api/bookings/create', newBooking);
                    setLoading(false);
                    navigate('/booking/confirmation', { state: { confirmation: bookingRes.data } });
               } catch (error) {

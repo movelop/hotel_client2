@@ -6,7 +6,7 @@ import useFetch from '../../hooks/useFetch';
 import './Rooms.scss';
 
 const Rooms = () => {
-    const { data, loading } = useFetch('https://heritage-resorts.herokuapp.com/api/rooms');
+    const { data, loading } = useFetch('/api/rooms');
     return (
         <div className="Rooms">
              <header

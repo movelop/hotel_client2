@@ -13,7 +13,7 @@ const Booking = () => {
       });
     const [error, setError] = useState("");
     const navigate = useNavigate();
-    const { data, loading } = useFetch('https://heritage-resorts.herokuapp.com/api/rooms');
+    const { data, loading } = useFetch('/api/rooms');
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,7 +28,7 @@ const Booking = () => {
           return setError("Only Fill out ONE of these fields.");
         }
         try {
-          const res = await axios.post('https://heritage-resorts.herokuapp.com/api/bookings', formData);
+          const res = await axios.post('/api/bookings', formData);
           navigate('/booking/existing', { state: { data: res.data }});
         } catch (error) {
           navigate('/booking/existing', { state: { error: error.response.data }});
