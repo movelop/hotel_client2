@@ -119,6 +119,7 @@ const BookWidget = () => {
                     {open && 
                         <div ref={refOne} className="calenderElement">
                             <DateRange
+                                style = {{ width: '100%', height: '100%' }}
                                 editableDateInputs={true}
                                 onChange={(item) => setSearchDate([item.selection])}
                                 moveRangeOnFirstSelection={false}
